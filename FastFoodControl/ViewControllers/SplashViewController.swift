@@ -77,13 +77,7 @@ final class SplashViewController: UIViewController {
         }
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
-            let loginVC = LoginViewController()
-            if let scene = SceneDelegate.current {
-                scene.cambiarARootViewController(loginVC, animado: true)
-            } else {
-                loginVC.modalPresentationStyle = .fullScreen
-                self.present(loginVC, animated: true)
-            }
+            self.cambiarPantallaRaiz(a: LoginViewController())
         }
     }
 }

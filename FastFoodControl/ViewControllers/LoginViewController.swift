@@ -149,12 +149,6 @@ final class LoginViewController: UIViewController {
         UserDefaults.standard.set(nombre, forKey: Constants.Session.currentStaffNameKey)
         UserDefaults.standard.set(rol, forKey: Constants.Session.currentStaffRoleKey)
 
-        let mainTab = MainTabBarController()
-        if let scene = SceneDelegate.current {
-            scene.cambiarARootViewController(mainTab, animado: true)
-        } else {
-            mainTab.modalPresentationStyle = .fullScreen
-            present(mainTab, animated: true)
-        }
+        cambiarPantallaRaiz(a: MainTabBarController())
     }
 }
