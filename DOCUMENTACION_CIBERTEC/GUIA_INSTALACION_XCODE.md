@@ -25,7 +25,9 @@ Esta guía te explica cómo ejecutar el proyecto **`FastFoodControl`** en una Ma
      - Marca **Copy items if needed** (Copiar elementos si es necesario).
      - Selecciona **Create groups**.
      - Verifica que esté marcado tu **Target** (`FastFoodControl`).
-3. **Evitar duplicados:** Si Xcode ya tenía un `AppDelegate.swift`, `SceneDelegate.swift` o `ViewController.swift` vacío por defecto de la plantilla inicial, elimínalos (**Move to Trash**) para que queden los archivos nuevos dentro de `App/` y `ViewControllers/`.
+3. **Evitar duplicados (¡ANTES de arrastrar!):** Primero elimina (**Move to Trash**) el `AppDelegate.swift` y `SceneDelegate.swift` de la plantilla que están **sueltos** en la raíz del proyecto. Recién después arrastra las carpetas. **Nunca borres los archivos dentro de la carpeta `App/`**: son los únicos `AppDelegate` y `SceneDelegate` de la app.
+   - Si aparece el error *"Cannot find 'SceneDelegate' in scope"* o la app abre en negro: selecciona `App/AppDelegate` y `App/SceneDelegate` → panel derecho → **Target Membership** → marca tu target.
+   - Si Xcode crea copias como `Info 2` o `Base 2.lproj`, elimínalas.
 4. Reemplaza el contenido de **`Info.plist`** (o agrega en el *Info* del Target las claves `NSLocationWhenInUseUsageDescription` y `NSAppTransportSecurity -> Allow Arbitrary Loads = YES`).
 
 ---
